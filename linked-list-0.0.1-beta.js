@@ -15,6 +15,16 @@ class LinkedList {
         this.length--
     }
 
+    removeAtIndex(index) {
+        if(index === 0) return this.removeHead()
+        
+        const prevNode = this.getByIndex(index-1)
+        if (prevNode === null ) return null
+        prevNode.next = prevNode.next.next
+        console.log(prevNode.next.next)
+        this.length--
+    }
+
     getByIndex(index) {                             
         if (index >= this.length || index < 0) return null
         let currentNode = this.head;
