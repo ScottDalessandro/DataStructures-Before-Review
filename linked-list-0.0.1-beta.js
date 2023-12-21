@@ -10,6 +10,14 @@ class LinkedList {
         this.length++
     }
 
+    removeHead() {
+        const head = this.head;
+        if(!head) return null
+
+        this.head = this.head.next
+        this.length--
+    }
+
     getByIndex(index) {                             
         if (index >= this.length || index < 0) return null
         let currentNode = this.head;
