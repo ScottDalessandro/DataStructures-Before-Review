@@ -1,4 +1,4 @@
-import LinkedList from './linked-list-0.0.1-beta.js'
+const LinkedList = require('./linked-list-0.0.1-beta.js')
 
 const ll = new LinkedList()
 ll.insertAtHead(10)
