@@ -19,6 +19,18 @@ class LinkedList {
         return currentNode
     }
 
+    print() {
+        // write a function that prints out the linked list
+        let output = ''
+        let currentNode = this.head
+        
+        while (currentNode) {
+            output+= `${currentNode.value} --> `
+            currentNode = currentNode.next
+        }
+        output+= JSON.stringify(currentNode)
+        console.log(output)
+        console.log('done')        
     }
 }
 
