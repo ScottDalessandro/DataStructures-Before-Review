@@ -19,6 +19,16 @@ class LinkedList {
         return currentNode
     }
 
+    insertAtIndex(index, value) {        
+        if (index === 0 ) return this.insertAtHead(value)        
+        const prevNode = this.getByIndex(index-1)        
+        if (prevNode === null ) return null
+        // prevNode.next points to the node being replaced
+        prevNode.next = new Node(value, prevNode.next)
+        
+        this.length++
+    }
+
     print() {
         // write a function that prints out the linked list
         let output = ''
