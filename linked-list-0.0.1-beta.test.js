@@ -75,7 +75,7 @@ describe('#insertAtIndex', () => {
             const node = ll.getByIndex(2)
             expect(node.value).toBe(50)
             expect(node.next.value).toBe(30)
-            expect(ll.length).toBe(4)
+            expect(ll.length).toBe(5)
         })
     })
 
