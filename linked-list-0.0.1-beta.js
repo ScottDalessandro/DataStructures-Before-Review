@@ -15,7 +15,10 @@ class LinkedList {
         let currentNode = this.head;
         for(let i = 0; i < index; i++) {
             currentNode = currentNode.next
-        }        
+        }
+        return currentNode
+    }
+
     }
 }
 
