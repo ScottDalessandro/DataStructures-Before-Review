@@ -6,7 +6,6 @@
   "version": "1.0.0",
   "description": "Pulling DataStructures from memory before reviewing them",
   "main": "app.js",
-  "type": "module",
   "dependencies": {
     "ansi-escapes": "^4.3.2",
     "ansi-regex": "^5.0.1",
