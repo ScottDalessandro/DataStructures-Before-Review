@@ -27,6 +27,7 @@ LinkedList.fromValues = function (...values) {
     Array.from(values).reverse().forEach( (val) => {
         ll.insertAtHead(val)
     })    
+    return ll;
 }
 
 module.exports = LinkedList
