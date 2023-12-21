@@ -5,12 +5,18 @@ class LinkedList {
     }
 
     insertAtHead(data) {
-        this.head = new Node(data, this.head)
+        const newNode = new Node(data, this.head)
+        this.head = newNode
         this.length++
     }
 
-
-    
+    getByIndex(index) {                             
+        if (index >= this.length || index < 0) return null
+        let currentNode = this.head;
+        for(let i = 0; i < index; i++) {
+            currentNode = currentNode.next
+        }        
+    }
 }
 
 class Node {
