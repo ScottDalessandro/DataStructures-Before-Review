@@ -10,10 +10,7 @@ class LinkedList {
         this.length++
     }
 
-    removeHead() {
-        const head = this.head;
-        if(!head) return null
-
+    removeHead() {        
         this.head = this.head.next
         this.length--
     }
