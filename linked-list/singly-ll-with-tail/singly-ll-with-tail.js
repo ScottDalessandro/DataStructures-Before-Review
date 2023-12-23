@@ -54,6 +54,22 @@ class SinglyLinkedList {
         }
         return oldHead
     }
+
+    unshift(val) {
+        const oldHead = this.head
+        this.head = new Node(val)
+        this.length++
+
+        if(!oldHead?.next) {
+            this.tail = this.head
+            return 
+        }
+
+        this.head.next = oldHead
+
+        return
+        
+    }
 }
 
 module.exports = SinglyLinkedList

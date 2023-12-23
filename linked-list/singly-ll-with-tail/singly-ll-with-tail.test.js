@@ -45,7 +45,7 @@ describe('#pop', () => {
         sll.push(5).push(4).push(3).push(2).push(1).push(0)
         const lastValueInLL = sll.pop()
 
-        expect(lastValueInLL.value).toBe(0)        
+        expect(lastValueInLL.value).toBe(0)
         expect(sll.tail.value).toBe(1)
         expect(sll.length).toBe(5)
     })
@@ -72,6 +72,13 @@ describe('#shift', () => {
     })
 })
 
-// describe('#unshift', () => {
-//     test()
-// })
+describe('#unshift', () => {
+    test('add a value at the beginning of a linked list when having neither head, tail, and length is 0', () => {
+        const sll = new SinglyLinkedList()
+        sll.unshift(5)
+
+        expect(sll.head.value).toBe(5)
+        expect(sll.tail.value).toBe(5)
+        expect(sll.length).toBe(1)
+    })
+})
