@@ -45,9 +45,9 @@ describe('#pop', () => {
         sll.push(5).push(4).push(3).push(2).push(1).push(0)
         const lastValueInLL = sll.pop()
 
-        expect(lasValueInLL).toBe(0)
-        expect(SinglyLinkedList.tail.value).toBe(1)
-        expect(SinglyLinkedList.length).toBe(4)
+        expect(lastValueInLL.value).toBe(0)        
+        expect(sll.tail.value).toBe(1)
+        expect(sll.length).toBe(5)
     })
 })
 
@@ -66,9 +66,9 @@ describe('#shift', () => {
         sll.push(5).push(4).push(3).push(2).push(1).push(0)
         const firsValueInLL = sll.shift()
 
-        expect(firsValueInLL).toBe(5)
-        expect(SinglyLinkedList.head.value).toBe(4)
-        expect(SinglyLinkedList.length).toBe(4)
+        expect(firsValueInLL.value).toBe(5)
+        expect(sll.head.value).toBe(4)
+        expect(sll.length).toBe(5)
     })
 })
 
