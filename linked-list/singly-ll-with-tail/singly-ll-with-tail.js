@@ -56,19 +56,17 @@ class SinglyLinkedList {
     }
 
     unshift(val) {
+        const newNode = new Node(val)        
         const oldHead = this.head
-        this.head = new Node(val)
-        this.length++
-
-        if(!oldHead?.next) {
+        if(!this.head) {
+            this.head = newNode
             this.tail = this.head
-            return 
+        } else {
+            newNode.next = this.head
+            this.head = newNode
         }
-
-        this.head.next = oldHead
-
-        return
-        
+        this.length++
+        return this      
     }
 }
 
