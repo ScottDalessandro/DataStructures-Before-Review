@@ -13,6 +13,15 @@ class SinglyLinkedList {
         this.length = 0
     }
 
+    getByIndex(index) {
+        if (index < 0 || index >= this.length ) return null
+        let currentNode = this.head
+        for(let i = 0; i < index; i++ ) {
+            currentNode = currentNode.next
+        }
+        return currentNode        
+    }
+
     push(val) {
         const newNode = new Node(val)
         if(!this.head) {
