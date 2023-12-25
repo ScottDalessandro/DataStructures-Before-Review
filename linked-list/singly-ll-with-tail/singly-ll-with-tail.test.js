@@ -10,6 +10,32 @@ describe('singly linked list with head', () => {
     })
 })
 
+describe('#getByIndex', () => {
+    test('with index less than 0', () => {
+        const sll = new SinglyLinkedList()
+        sll.push(5)
+
+        expect(sll.getByIndex(-2)).toBeNull()
+    })
+
+    test('with index greater or equal to the length of Linked List', () => {
+        const sll = new SinglyLinkedList()
+        sll.push(10)
+
+        expect(sll.getByIndex(1)).toBeNull()
+        expect(sll.getByIndex(5)).toBeNull()
+    })
+
+    test('gets the value based on the index', () => {
+        const sll = new SinglyLinkedList()
+        sll.push(20)
+        sll.push(10)
+        sll.push(5)
+
+        expect(sll.getByIndex(1)).toEqual({value: 10, next: { value: 5, next: null }})
+    })
+})
+
 describe('#push', () => {
     
     test('with no head, tail, and length is 0', () => {
