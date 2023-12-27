@@ -38,6 +38,24 @@ class SinglyLinkedList {
         return true
     }
 
+    remove(index) {
+        if (index < 0 || index > this.length) return undefined
+        if (index === this.length - 1) this.pop()
+        if (index === 0) this.shift()
+
+        const prevNode = this.getByIndex(index-1)
+        const removedNode = prevNode.next
+        prevNode.next = preveNode.next.next
+
+        this.length--
+
+        return removedNode;
+    }
+
+    reverse() {
+        
+    }
+
     set(index, value) {
         const node = this.getByIndex(index)
         if(node === null) {            
