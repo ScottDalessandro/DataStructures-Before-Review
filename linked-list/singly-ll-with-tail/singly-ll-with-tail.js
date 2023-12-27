@@ -68,6 +68,17 @@ class SinglyLinkedList {
         }
     }
 
+    print() {
+        const arr = []
+        let current = this.head
+
+        while(current.next) {
+            arr.push(current.val)
+            current = current.next
+        }
+        console.log(arr)
+    }
+
     set(index, value) {
         const node = this.getByIndex(index)
         if(node === null) {            
