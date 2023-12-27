@@ -36,6 +36,25 @@ describe('#getByIndex', () => {
     })
 })
 
+describe('#set', () => {
+    test('with index greater or equal to the length of Linked List', () => {
+        const sll = new SinglyLinkedList()
+        sll.push(10)
+
+        expect(sll.set(1)).toBe(false)
+        expect(sll.set(5)).toBe(false)
+    })})
+
+    test('returns true if value is updated', () => {
+        const sll = new SinglyLinkedList()
+        sll.push(10)
+        sll.push(12)
+        sll.push(3)
+
+        expect(sll.set(1,22)).toBe(true)
+        expect(sll.getByIndex(1).value).toBe(22)
+    })
+
 describe('#push', () => {
     
     test('with no head, tail, and length is 0', () => {

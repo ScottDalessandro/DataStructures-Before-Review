@@ -22,6 +22,32 @@ class SinglyLinkedList {
         return currentNode        
     }
 
+    setByIndex(index, value) {
+        if (index < 0 || index > this.length ) return false
+        if(index === this.length) return !!this.push(value)
+        if(index === 0) return !!this.unshift(value)
+        
+        const prevNode = this.getByIndex(index-1)
+        const newNode = new Node(value)
+        
+        newNode.next = prevNode.next
+        prevNode.next = newNode
+
+        this.length++
+
+        return true
+    }
+
+    set(index, value) {
+        const node = this.getByIndex(index)
+        if(node === null) {            
+            return false
+        }
+        node.value = value;
+        return true
+
+    }
+
     push(val) {
         const newNode = new Node(val)
         if(!this.head) {
