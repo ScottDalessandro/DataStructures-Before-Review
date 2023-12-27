@@ -66,6 +66,7 @@ class SinglyLinkedList {
             prev = node
             node = next
         }
+        return this
     }
 
     print() {
