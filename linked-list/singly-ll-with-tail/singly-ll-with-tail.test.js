@@ -36,6 +36,20 @@ describe('#getByIndex', () => {
     })
 })
 
+describe('#reverse', () => {
+    test('it reverses the linked list in place', () => {
+        const sll = new SinglyLinkedList()
+
+        sll.push(13)
+        sll.push(27)
+        sll.push(32)
+        sll.push(71)
+        
+
+        sll.reverse()
+    })
+})
+
 describe('#set', () => {
     test('with index greater or equal to the length of Linked List', () => {
         const sll = new SinglyLinkedList()
