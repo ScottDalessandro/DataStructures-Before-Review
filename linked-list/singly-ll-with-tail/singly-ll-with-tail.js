@@ -59,13 +59,19 @@ class SinglyLinkedList {
 
         let next;
         let prev = null;
-
-        for(let i = 0; i < this.length; i++) {
+        while(node.next) {
             next = node.next
-            node.next = prev
+            node.next = prev // having a hard time visulizing this...
+
             prev = node
             node = next
         }
+        // for(let i = 0; i < this.length; i++) {
+        //     next = node.next
+        //     node.next = prev
+        //     prev = node
+        //     node = next
+        // }
         return this
     }
 
