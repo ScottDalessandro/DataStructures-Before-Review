@@ -83,7 +83,7 @@ class DoublyLinkedList {
             current = this.head
             while(count !== index) {
                 current = current.next
-                count--
+                count++
             }
         } else {
             count = this.length = 1
