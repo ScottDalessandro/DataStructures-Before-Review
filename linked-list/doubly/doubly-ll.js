@@ -76,7 +76,7 @@ class DoublyLinkedList {
 
     get(index) {
         if(index < 0 || index >= this.length) return null
-        let node, count;
+        let current, count;
 
         if(index <= this.length/2) {
             count = 0
@@ -86,7 +86,7 @@ class DoublyLinkedList {
                 count++
             }
         } else {
-            count = this.length = 1
+            count = this.length - 1
             current = this.tail
 
             while(count !== index) {
@@ -96,4 +96,68 @@ class DoublyLinkedList {
         }
         return current
     }
+
+    set(index, val) {
+        const node = this.get(index)
+        
+        if(node !== null) {
+            node.val = val    
+            return true
+        }
+        return false
+    }
+    
+    insert(index, val) {
+        if(index < 0 || index >= this.length) return null
+        if(index === 0) return !!this.unshift(val)
+        if(index === this.length) return !!this.push(val)
+
+       
+        const beforeNode = this.get(index-1)
+        const afterNode = beforeNode.next
+        const newNode = new Node(val)
+
+        newNode.prev = beforeNode
+        newNode.next = beforeNode.next
+
+        afterNode.next.prev = newNode
+        afterNode.next = newNode 
+
+        this.length++
+
+        return true
+    }
+
+    remove(index, val) {
+        
+        if(index < 0 || index >= this.length) return undefined
+        if(index === 0) return this.shift()
+        if(index === this.length -1) return this.pop()
+
+        
+        const removedNode = this.get(index)
+        const beforeNode = removedNode.prev
+        const afterNode = removedNode.next
+
+        beforeNode.next = afterNode
+        afterNode.prev = beforeNode
+        
+        // remove lingering references
+        removedNode.next = null
+        removedNode.prev = null
+        this.length--
+        return removedNode
+
+    }
 }
+
+const doubly = new DoublyLinkedList()
+
+doubly.push(1)
+doubly.push(2)
+doubly.push(3)
+
+console.log("HEAD", doubly.head)
+console.log("TAIL", doubly.tail)
+console.log("LL", doubly)
+
