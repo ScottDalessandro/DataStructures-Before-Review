@@ -16,5 +16,17 @@ describe('HashTable', () => {
         test.todo('returns undefined when a key is not stored')
     })
 
+    describe('remove', () => {
+        test.todo('removes a value by key')
+    })
+
+    describe('list', () => {
+        test.todo('gets all the keys')
+    })
+
+    describe('count', () => {
+        test.todo('count the number of items in the table')
+    })
+
     describe('put', () => {})
 })
