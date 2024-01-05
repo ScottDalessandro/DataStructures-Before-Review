@@ -83,7 +83,7 @@ class SinglyLinkedList {
             arr.push(current.val)
             current = current.next
         }
-        console.log(arr)
+        // console.log(arr)        
     }
 
     set(index, value) {

@@ -29,6 +29,11 @@ describe('HashTable', () => {
     })
 
     describe('_hash', () => {
-        test.todo('creats a hash code (integer) from a key')
+        test('creates a hash code (integer) from a key', () => {
+            // don't have insert implementation yet, using random key
+            const hashTable = new HashTable()
+            expect(hashTable._hash('hello')).toBe(532)
+        })
+        test.todo('hash value stays within bounds of size')
     })
 })
