@@ -28,5 +28,7 @@ describe('HashTable', () => {
         test.todo('count the number of items in the table')
     })
 
-    describe('put', () => {})
+    describe('_hash', () => {
+        test.todo('creats a hash code (integer) from a key')
+    })
 })
