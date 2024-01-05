@@ -1,5 +1,5 @@
 class HashTable {
-    table = new Array(200)    
+    table = new Array(2001)    
 
     _hash(key) {
        let hash = 17 // prime number
@@ -15,8 +15,7 @@ class HashTable {
     }
 
     get(key) {
-      const idx = this._hash(key)
-      console.log(idx)
+      const idx = this._hash(key)      
       if (!this.table[idx]) return null
       return this.table[idx].find(x => x[0] === key)[1]     
     }
