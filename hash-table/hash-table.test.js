@@ -46,6 +46,18 @@ describe('HashTable', () => {
         test.todo('count the number of items in the table')
     })
 
+    describe('has', () => {
+        test('returns true if a key already exists in a bucket', () => {
+            const hashTable = new HashTable()
+            hashTable.add('example', 1000)
+            expect(hashTable.has('example')).toBe(true)
+        })
+        test('returns false if a key does not exist in a bucket', () => {
+            const hashTable = new HashTable()            
+            expect(hashTable.has('example')).toBe(null)
+        })
+    })
+
     describe('_hash', () => {
         test('creates a hash code (integer) from a key', () => {
             // don't have insert implementation yet, using random key
